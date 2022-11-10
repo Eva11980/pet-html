@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet"
+        type="text/css" />
+    <title>Member page</title>
+    <style>
+        @font-face {
+            font-family: big_circle;
+            src: url(../font/GenSenRounded-R.ttc);
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: big_circle;
+        }
+
+        h2 {
+            font-weight: 900;
+            color: #40220f;
+        }
+
+        body {
+            background-color: #fff5de;
+        }
+
+        ul {
+            font-size: 15px;
+            color: #966134;
+        }
+
+        /* 1200  100% */
+
+
+        .member {
+            width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+
+        .Web-path {
+            color: #dcdddd;
+            margin-bottom: 40px;
+        }
+
+        .member-shipL {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .member-photo {
+            width: 50px;
+            height: 50px;
+            background-color: darkblue;
+            border-radius: 50%;
+            overflow: hidden;
+            /* 超出去的切掉 */
+            margin-bottom: 15px;
+            border: 2px solid#DCDDDD ;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 自動等比例延展圖片 */
+
+        }
+
+        .member-icon {
+            margin-top: 50px;
+        }
+
+        .member-icon ul {
+            display: flex;
+            margin-bottom: 35px;
+        }
+
+
+
+        .icon {
+            width: 10px;
+            height: 10px;
+        }
+
+        /* .iconmember {
+            width: 15px;
+            height: 15px;
+            /* background-color: cornflowerblue; */
+            /* overflow: hidden;
+        }  */
+/* 
+        .iconmember img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } */
+
+        .degreeWrap {
+            width: 100%;
+            /* height: 70%; */
+            display: flex;
+        }
+
+        .degree {
+            width: 33.33333%;
+            display: flex;
+            flex-direction: column;
+            /* 從上到下 */
+            align-items: center;
+        }
+
+        .d1 {
+            transform: perspective(200px) translateZ(-50px);
+        }
+
+        .d2 {
+            transform: perspective(400px) translateZ(50px);
+        }
+
+        .d3 {
+            transform: perspective(200px) translateZ(-50px);
+        }
+
+        .degreeC {
+            height: 70%;
+        }
+
+        .card-degree {
+            width: 80%;
+            height: 700px;
+            background-color: #fff;
+            padding-top: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .degreeImg {
+            width: 250px;
+            height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 120px 15px -70px rgb(123, 122, 122);
+        }
+
+        .degreeImg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .degree-card {
+            margin-top: 80px;
+        }
+
+        .degree-card h2 {
+            font-size: 20px;
+        }
+
+        .degree-card p {
+            font-size: 14px;
+        }
+
+        .degree-txt {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            color: #966134;
+
+        }
+
+        .degreeIcon {
+            width: 354px;
+            /* flex-grow: 1; */
+            /* align-self: center; */
+        }
+
+
+
+        .ship-bottom {
+            width: 100%;
+            height: 30%;
+            background-color: #dcdddd;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0px;
+            justify-content: space-between;
+
+        }
+
+        .ship {
+            align-self: center;
+        }
+
+        .ship h2 {
+            position: relative;
+            display: inline-block;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .ship h2::before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: -15px;
+            width: 10px;
+            height: 1px;
+            border-bottom: 1px solid rgb(0, 0, 0);
+
+
+        }
+
+        .ship h2::after {
+            content: "";
+            position: absolute;
+            top: 7px;
+            right: -14px;
+            width: 10px;
+            height: 1px;
+            border-bottom: 1px solid rgb(0, 0, 0);
+
+            border-bottom: 1px solid rgb(11, 11, 11);
+        }
+
+        .ship p {
+            font-size: 10px;
+            color: #966134;
+            text-align: center;
+        }
+
+        .input-text {
+            display: flex;
+
+        }
+
+        .input {
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .range {
+            width: 100%;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 3px;
+        }
+
+        .range div {
+            width: 20%;
+            height: 100%;
+            background-color: red;
+
+        }
+
+        .inputRange {
+            width: 40%;
+
+        }
+
+        .fa-caret-right {
+            color: #966134;
+        }
+
+        .fa-thin,
+        .fa-light {
+            color: #966134;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="member-page">
+        <div class="Web-path">
+            <h2>首頁>會員中心>會員首頁</h2>
+        </div>
+        <div class="member">
+            <div class="member-shipL">
+                <div class="member-ship">
+                    <div class="member-photo">
+                        <img src="../image/person_1.jpg" alt="">
+                    </div>
+                    <h5>艾蜜莉</h5>
+                </div>
+
+                <div class="member-icon">
+                    <ul>
+                        <i class="fa-light fa-house-user"></i>
+                        <li>會員首頁</li>
+                    </ul>
+                    <ul>
+                      
+                        <i class="fa-thin fa-shield-dog"></i>
+                        <li>我的寵物</li>
+                    </ul>
+                    <ul>
+                        <i class="fa-light fa-books"></i>
+                        <li>文章收藏</li>
+                    </ul>
+                    <ul>
+                        <i class="fa-light fa-folder-bookmark"></i>
+                        <li>商品收藏</li>
+                    </ul>
+                    <ul>
+                        <i class="fa-thin fa-book-medical"></i>
+                        <li>預約掛號</li>
+                    </ul>
+                    <ul>
+                       
+                        <i class="fa-thin fa-rectangle-history-circle-plus"></i>
+                        <li>歷史訂單（商品）</li>
+                    </ul>
+                    <ul>
+                        <i class="fa-light fa-camera"></i>
+                        <li>歷史訂單（攝影）</li>
+                      </ul>
+                    <ul>
+                        <i class="fa-light fa-user-gear"></i>
+                        <li>修改資料</li>
+                    </ul>
+                    <ul>
+                        <i class="fa-thin fa-key"></i>
+                        <li>密碼修改</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-degree">
+                <div class="degreeC">
+                    <div class="degreeWrap">
+                        <div class="degree d1">
+                            <div class="degreeImg">
+                                <img src="../image/MemberCard_1.png" alt="">
+                            </div>
+                            <div class="degree-card">
+                                <h2>初階學士</h2>
+                                <h2>elementary</h2>
+                                <p>會員卡</p>
+                            </div>
+                        </div>
+                        <div class="degree d2">
+                            <div class="degreeImg">
+                                <img src="../image/MemberCard_2.png" alt="">
+                            </div>
+                            <div class="degree-card">
+                                <h2>中階碩士</h2>
+                                <h2>master</h2>
+                                <p>會員卡</p>
+
+                            </div>
+                        </div>
+                        <div class="degree d3">
+                            <div class="degreeImg">
+                                <img src="../image/MemberCard_3.png" alt="">
+                            </div>
+                            <div class="degree-card">
+                                <h2>高階博士</h2>
+                                <h2>doctor</h2>
+                                <p>會員卡</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="degree-txt">
+                        <div class="degreeIcon">
+                            <i class="fa-solid fa-caret-right "></i>
+                            <span>每月第一筆訂單，不限金額，即可享免運優惠。</span>
+                        </div>
+                        <div class="degreeIcon">
+                            <i class="fa-solid fa-caret-right"></i>
+                            <span>單筆凡超過2,500元可享5%折扣</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ship-bottom">
+                    <div class="ship">
+                        <h2>解鎖進階等級</h2>
+                        <p>目前級別：初階學士</p>
+                    </div>
+                    <div class="input">
+                        <div class="inputRange">
+                            <div class="input-text">
+                                <p>累積訂單</p>
+                                <span>4</span>
+                                <span>/10</span>
+                            </div>
+                            <div class="range">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="inputRange">
+                            <div class="input-text">
+                                <p>累積消費</p>
+                                <span>＄5,080</span>
+                                <span>/8,000</span>
+                            </div>
+                            <!-- <input type="range"> -->
+                            <div class="range">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
